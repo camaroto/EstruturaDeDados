@@ -11,7 +11,7 @@ public class Aluno {
     void atribuirNota(Double nota) {
         System.out.println("Informe as notas:");
         for (int i = 0; i < 3; i++) {
-            nota[i] = s.nextDouble();
+            // nota[i] = s.nextDouble();
         }
     }
 }
