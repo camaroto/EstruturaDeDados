@@ -1,4 +1,4 @@
-package TAD.Lampada;
+package aula_03_09.TAD.Lampada;
 import java.util.Scanner;
 
 public class UsaLampada {

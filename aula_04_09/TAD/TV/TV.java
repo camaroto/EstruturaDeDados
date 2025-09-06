@@ -14,23 +14,46 @@ public class TV {
     }
 
     public int aumentarVolume() {
-        this.volume += 1;
+        if (this.volume < 100) {
+            this.volume += 1;
+        } else {
+            System.out.println("Você já está no volume máximo.");
+        }
         return volume;
     }
 
     public int diminuirVolume() {
-        this.volume -= 1;
+        if (this.volume > 0) {
+            this.volume -= 1;
+        } else {
+            System.out.println("Você já está no volume mínimo.");
+        }
         return volume;
     }
 
     public int aumentarCanal() {
-        this.canal += 1;
+        if (this.canal < 999) {
+            this.canal += 1;
+        } else {
+            this.canal = 0;
+            System.out.println("Canal voltou para 0");
+        }
         return canal;
     }
 
     public int diminuirCanal() {
-        this.canal -= 1;
+        if (this.canal > 0) {
+            this.canal -= 1;
+        } else {
+            this.canal = 999;
+            System.out.println("Canal voltou para 999.");
+        }
         return canal;
     }
 
+    public void mostrarInfos() {
+        System.out.printf("\nA tv está: %s\n", status ? "ligada" : "desligada");
+        System.out.printf("Volume: %d\n", volume);
+        System.out.printf("Canal: %d\n", canal);
+    }
 }
