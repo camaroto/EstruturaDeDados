@@ -6,7 +6,7 @@ public class VetorMultiCinco {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Informe a quantidade de Números do vetor: ");
+        System.out.println("DIgite a quantidade de Números do vetor: ");
         int n = s.nextInt();
 
         int VetorNormal[] = new int[n];

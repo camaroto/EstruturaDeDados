@@ -6,12 +6,39 @@ public class Aluno {
     Scanner s = new Scanner(System.in);
 
     String aluno;
-    Double nota[] = new Double[3];
+    int nota;
+    double notas[] = new double[4];
 
-    void atribuirNota(Double nota) {
-        System.out.println("Informe as notas:");
-        for (int i = 0; i < 3; i++) {
-            // nota[i] = s.nextDouble();
+    public void nomeAluno() {
+        System.out.print("\nNome: ");
+        this.aluno = s.nextLine();
+    }
+
+    public void atribuirNota() {
+        System.out.println("Informe as 4 notas do aluno: ");
+        for (int i = 0; i < 4; i++) {
+            this.notas[i] = s.nextDouble();
         }
+    }
+
+    public void mostrarNotas() {
+        for (int i = 0; i < 4; i++) {
+            System.out.printf("Nota %d: %.1f\n", i + 1, notas[i]);
+        }
+    }
+
+    double assistenteMedia = 0;
+    double media = 0;
+
+    public void calcularMedia() {
+        for (int i = 0; i < 4; i++) {
+            assistenteMedia += this.notas[i];
+            media = assistenteMedia / 4;
+        }
+        System.out.println("Média Calculada!");
+    }
+
+    public void mostrarMedia() {
+        System.out.printf("A Média de %s é de %.1f", aluno, media);
     }
 }
