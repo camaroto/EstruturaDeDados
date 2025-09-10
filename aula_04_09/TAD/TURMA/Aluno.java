@@ -99,6 +99,6 @@ public class Aluno {
                 }
             }
         }
-        System.out.printf("a soma das notas da turma eh de: %.1f", media);
+        System.out.printf("A média das turmas é de: %.1f", media);
     }
 }
