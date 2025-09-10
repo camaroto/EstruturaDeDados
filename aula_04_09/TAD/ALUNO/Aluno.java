@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Aluno {
     Scanner s = new Scanner(System.in);
-
+    
     String aluno;
     int nota;
     double notas[] = new double[4];
@@ -35,10 +35,10 @@ public class Aluno {
             assistenteMedia += this.notas[i];
             media = assistenteMedia / 4;
         }
-        System.out.println("Média Calculada!");
+        System.out.println("Média Calculada!\n");
     }
 
     public void mostrarMedia() {
-        System.out.printf("A Média de %s é de %.1f", aluno, media);
+        System.out.printf("\nA Média de %s é de %.1f\n", aluno, media);
     }
 }
