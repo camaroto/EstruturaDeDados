@@ -38,6 +38,7 @@ public class Turma {
                 System.out.println("Invalido");
                 main(args);
             }
+            s.close();
         }
     }
 }
