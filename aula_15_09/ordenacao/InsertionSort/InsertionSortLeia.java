@@ -1,7 +1,10 @@
 package aula_15_09.ordenacao.InsertionSort;
 
-public class InsertionSortExemplo1 {
+import java.util.Scanner;
+
+public class InsertionSortLeia {
     public static void InsertionSort(int v[]) {
+        System.out.println("numeros ordenados:");
         int atual;
         for (int i = 1; i < v.length; i++) {
             atual = v[i];
@@ -14,10 +17,18 @@ public class InsertionSortExemplo1 {
     }
 
     public static void main(String[] args) {
-        int vetor[] = { 23, 4, -8, 81, 10 };
+        Scanner s = new Scanner(System.in);
+        int vetor[] = new int[5];
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println("digite um número");
+            vetor[i] = s.nextInt();
+        }
+
         InsertionSort(vetor);
         for (int i = 0; i < vetor.length; i++) {
             System.out.println(vetor[i]);
         }
+        s.close();
     }
 }
