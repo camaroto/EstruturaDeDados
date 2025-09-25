@@ -2,33 +2,59 @@ package aula_17_09;
 
 import java.util.Scanner;
 
-public class exercicio2 {
+public class Exercicio2 {
 
-    public static void InsertionSort(String[] nomes) {
-        for (int i = 1; i < nomes.length; i++) {
-            String atual = nomes[i];
-            int j;
-            for (j = i; (j > 0) && (atual.compareToIgnoreCase(nomes[j - 1]) > 0); j--) {
-                nomes[j] = nomes[j - 1];
-            }
-            nomes[j] = atual;
+    static void lerNomes(String v[]) {
+        Scanner teclado = new Scanner(System.in);
+        int tamanhoVetor = v.length;
+        System.out.println("Digite o nome de 10 pessoas.");
+        for (int i = 0; i < tamanhoVetor; i++) {
+            System.out.printf("Nome %d: ", i + 1);
+            v[i] = teclado.nextLine();
         }
+        // teclado.close(); // não fechar aqui!
+    }
+
+    static void mostrar(String v[]) {
+        System.out.println("---------- Lista de nomes ----------");
+        int tamanhoVetor = v.length;
+        for (int i = 0; i < tamanhoVetor; i++) {
+            System.out.printf("%s   ", v[i]);
+        }
+        System.out.println("\n-----------------------------------");
+    }
+
+    static void troca(String v[], int atual, int proxima) {
+        String aux = v[atual];
+        v[atual] = v[proxima];
+        v[proxima] = aux;
+    }
+
+    static void bubbleSort(String v[]) {
+        int n = v.length;
+        boolean trocou;
+        do {
+            trocou = false;
+            for (int i = 0; i < n - 1; i++) {
+                if (v[i].compareTo(v[i + 1]) > 0) {
+                    troca(v, i, i + 1);
+                    trocou = true;
+                }
+            }
+            n--; // otimização: última posição já está ordenada
+        } while (trocou);
     }
 
     public static void main(String[] args) {
-        Scanner atumalaca = new Scanner(System.in);
         String nomes[] = new String[10];
+        lerNomes(nomes);
 
-        for (int i = 0; i < nomes.length; i++) {
-            System.out.printf("Informe o nome %d: ", i + 1);
-            nomes[i] = atumalaca.nextLine();
-        }
+        System.out.println("\nAntes da ordenação:");
+        mostrar(nomes);
 
-        InsertionSort(nomes);
+        bubbleSort(nomes);
 
-        for (int j = 0; j < nomes.length; j++) {
-            System.out.println(nomes[j]);
-        }
-        atumalaca.close();
+        System.out.println("\nDepois da ordenação:");
+        mostrar(nomes);
     }
 }

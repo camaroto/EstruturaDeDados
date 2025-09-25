@@ -2,7 +2,7 @@ package aula_17_09;
 
 import java.util.Scanner;
 
-public class exercicio1 {
+public class Exercicio1 {
 
     public static void InsertionSort(double[] peso) {
         for (int i = 1; i < peso.length; i++) {
