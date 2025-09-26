@@ -1,5 +1,3 @@
-package Prova.Contador;
-
 import java.util.Scanner;
 
 public class Contador {
