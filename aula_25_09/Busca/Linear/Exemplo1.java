@@ -1,7 +1,5 @@
 package aula_25_09.Busca.Linear;
 
-import java.util.Scanner;
-
 public class Exemplo1 {
 
     static int buscaLinear(int v[], int valor) {

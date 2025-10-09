@@ -21,7 +21,7 @@ public class Exercicio3 {
             s.nextLine(); // consumir quebra de linha
             v[i] = aluno; // <-- ADICIONA NO VETOR
         }
-
+s.close();
     }
 
     static void insertionSort(Aluno v[]) {
