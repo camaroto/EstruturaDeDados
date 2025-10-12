@@ -2,7 +2,7 @@ package aula_17_09;
 
 import java.util.Scanner;
 
-public class Exercicio2 {
+public class exercicio2 {
 
     static void lerNomes(String v[]) {
         Scanner teclado = new Scanner(System.in);
