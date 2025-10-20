@@ -57,10 +57,7 @@ public class AtletaTeste {
         for (int i = 1; i < tamanhoAtual; i++) {
             Atleta atual = v[i];
             int j = i;
-            while (j > 0 &&
-                    (atual.tempoEmMinutos < v[j - 1].tempoEmMinutos
-                            || (atual.tempoEmMinutos == v[j - 1].tempoEmMinutos &&
-                                    atual.nome.compareTo(v[j - 1].nome) > 0))) {
+            while (j > 0 && (atual.tempoEmMinutos < v[j - 1].tempoEmMinutos || (atual.tempoEmMinutos == v[j - 1].tempoEmMinutos && atual.nome.compareTo(v[j - 1].nome) > 0))) {
                 v[j] = v[j - 1];
                 j--;
             }

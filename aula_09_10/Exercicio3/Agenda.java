@@ -51,8 +51,8 @@ public class Agenda {
         }
     }
 
-    static int buscaBinaria(Contato v[], int tamanho, String nome) {
-        int inicio = 0, meio, fim = tamanho - 1;
+    static int buscaBinaria(Contato v[], int total, String nome) {
+        int inicio = 0, meio, fim = total - 1;
         while (inicio <= fim) {
             meio = (inicio + fim) / 2;
             if (nome.compareToIgnoreCase(v[meio].nomeCompleto) < 0) {
@@ -63,14 +63,7 @@ public class Agenda {
                 return meio;
             }
         }
-        return -1; // elemento não encontrado
-    }
-
-    static void verDadosContato(Contato c) {
-        System.out.println("Dados do Contato");
-        System.out.printf("Nome: %s\n", c.nomeCompleto);
-        System.out.printf("Telefone: %s\n", c.telefone);
-        System.out.printf("Email: %s\n", c.email);
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -89,14 +82,27 @@ public class Agenda {
                 InsertionSort(contatos, total);
                 listarContatos(contatos, total);
             } else if (opcao == 3) {
-                InsertionSort(contatos, total);
-                System.out.print("Digite o nome: ");
-                String nome = s.next();
+                System.out.println("Informe o nome");
+                String nome = s.nextLine();
                 int posicao = buscaBinaria(contatos, total, nome);
                 if (posicao > -1) {
-                    verDadosContato(contatos[posicao]);
+                    System.out.println("Contatos com o nome de " + nome + ":");
+                    System.out.println("Nome\t\t\tTelefone\t\t\tEmail");
+
+                    int i = posicao;
+
+                    while (i > 0 && contatos[i - 1].nomeCompleto.equalsIgnoreCase(nome)) {
+                        i--;
+                    }
+
+                    while (i < total && contatos[i].nomeCompleto.equalsIgnoreCase(nome)) {
+                        System.out.printf("%s\t\t\t%s\t\t\t%s\n", contatos[i].nomeCompleto, contatos[i].telefone,
+                                contatos[i].email);
+                        i++;
+                    }
+
                 } else {
-                    System.out.println("Contato nao encontrado!");
+                    System.out.println("Contato nao existe!");
                 }
             }
         } while (opcao != 4);
